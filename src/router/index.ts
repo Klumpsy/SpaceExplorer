@@ -18,9 +18,15 @@ const router = createRouter({
       component: () => import('../views/NearEarthObjects.vue')
     },
     {
-      path: '/champions',
-      name: 'champions',
-      component: () => import('../views/Planets.vue')
+      path: '/mars-rovers',
+      name: 'marsRovers',
+      component: () => import('../views/MarsRovers.vue')
+    },
+    {
+      path: '/mars-rovers/:roverName',
+      name: 'roverDetail',
+      component: () => import('../views/MarsRoverDetail.vue'),
+      props: true
     }
   ]
 })

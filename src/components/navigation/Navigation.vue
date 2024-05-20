@@ -63,10 +63,10 @@ function toggleMenu() {
           >Near Earth Objects</RouterLink
         >
         <RouterLink
-          :to="{ name: 'champions' }"
+          :to="{ name: 'marsRovers' }"
           class="block py-2 px-10 mx-5 text-white bg-green-700 rounded md:bg-transparent md:text-green-700 md:p-0 dark:text-green-400"
           aria-current="page"
-          >Planets</RouterLink
+          >Mars Rovers</RouterLink
         >
       </div>
     </div>
