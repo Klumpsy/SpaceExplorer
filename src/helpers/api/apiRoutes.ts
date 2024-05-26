@@ -27,3 +27,23 @@ export const getNearEarthObjects = async (startDate: string, endDate: string) =>
     throw error
   }
 }
+
+export const getRoverPhotos = async (rover, earthDate, camera) => {
+  let url = `/mars-photos/api/v1/rovers/${rover}/photos?api_key=${API_KEY}`
+
+  if (earthDate) {
+    url += `&earth_date=${earthDate}`
+  }
+  if (camera) {
+    url += `&camera=${camera}`
+  }
+
+  try {
+    const response = await nasaApiClient.get(url)
+    console.log(response.data.photos)
+    return response.data.photos
+  } catch (error) {
+    console.error('Error fetching rover photos:', error)
+    throw error
+  }
+}
