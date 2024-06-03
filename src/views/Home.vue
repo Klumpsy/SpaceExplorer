@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { getPictureOfTheDay } from '../helpers/api/apiRoutes'
 import DateHelper from '../helpers/api/DateHelper'
-import { PictureOfTheDay } from '../interface/PictureOfTheDay'
+import type { PictureOfTheDay } from '../definitions/interface/PictureOfTheDay'
 
 const pictureOfTheDay = ref<PictureOfTheDay | null>(null)
 const showRocket = ref(false)

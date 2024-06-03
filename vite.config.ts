@@ -7,9 +7,12 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 
 export default defineConfig({
   plugins: [vue(), vueJsx(), VueDevTools()],
+  base: '/spaceExplorer/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
 })
+
+//https://www.youtube.com/watch?v=yo2bMGnIKE8

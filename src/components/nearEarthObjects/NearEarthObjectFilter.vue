@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
+import { FilterChangeType } from '../../definitions/type/FilterChangeType'
 
-const minDiameter = ref('')
-const maxDiameter = ref('')
-const isHazardous = ref('')
-const maxMagnitude = ref('')
+const minDiameter = ref<number>(0)
+const maxDiameter = ref<number>(0)
+const isHazardous = ref<boolean>(false)
+const maxMagnitude = ref<number>(0)
 
-const emit = defineEmits(['filter-change'])
+const emit: FilterChangeType = defineEmits(['filter-change'])
 
 const emitFilterChange = () => {
   emit('filter-change', {

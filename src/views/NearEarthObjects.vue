@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { getNearEarthObjects } from '../helpers/api/apiRoutes'
-import { NearEarthObject } from '../interface/NearEarthObject'
+import type { NearEarthObject } from '../definitions/interface/NearEarthObject'
 import { format, subDays } from 'date-fns'
 import NearEarthObjectFilter from '../components/nearEarthObjects/NearEarthObjectFilter.vue'
 import DateHelper from '../helpers/api/DateHelper'
@@ -11,7 +11,7 @@ const endDate = ref(format(new Date(), 'yyyy-MM-dd'))
 
 const nearEarthObjects = ref<NearEarthObject[]>([])
 const loading = ref(false)
-const error = ref(null)
+const error = ref<unknown | null>(null)
 
 async function fetchData() {
   loading.value = true
@@ -27,7 +27,7 @@ async function fetchData() {
   }
 }
 
-const applyFilters = (filters) => {
+const applyFilters = (filters: NearEarthObjectFilterChangePayload) => {
   fetchData().then(() => {
     let filteredData = [...nearEarthObjects.value]
     if (filters.maxMagnitude) {

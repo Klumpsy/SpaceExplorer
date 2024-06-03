@@ -5,17 +5,17 @@ const rovers = ref([
   {
     name: 'Curiosity',
     imgSrc: new URL('../assets/images/curiosity.jpg', import.meta.url).href,
-    link: '/mars-rovers/curiosity'
+    link: 'mars-rovers/curiosity'
   },
   {
     name: 'Opportunity',
     imgSrc: new URL('../assets/images/opportunity.jpg', import.meta.url).href,
-    link: '/mars-rovers/opportunity'
+    link: 'mars-rovers/opportunity'
   },
   {
     name: 'Spirit',
     imgSrc: new URL('../assets/images/spirit.jpg', import.meta.url).href,
-    link: '/mars-rovers/spirit'
+    link: 'mars-rovers/spirit'
   }
 ])
 </script>

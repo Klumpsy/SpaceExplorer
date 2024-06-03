@@ -28,7 +28,7 @@ export const getNearEarthObjects = async (startDate: string, endDate: string) =>
   }
 }
 
-export const getRoverPhotos = async (rover, earthDate, camera) => {
+export const getRoverPhotos = async (rover: string, earthDate: string, camera: string) => {
   let url = `/mars-photos/api/v1/rovers/${rover}/photos?api_key=${API_KEY}`
 
   if (earthDate) {
