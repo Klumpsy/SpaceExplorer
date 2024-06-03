@@ -5,6 +5,7 @@ import type { NearEarthObject } from '../definitions/interface/NearEarthObject'
 import { format, subDays } from 'date-fns'
 import NearEarthObjectFilter from '../components/nearEarthObjects/NearEarthObjectFilter.vue'
 import DateHelper from '../helpers/api/DateHelper'
+import type { NearEarthObjectFilterChangePayload } from '../definitions/interface/NearEarthObjectFilterChangePayload'
 
 const startDate = ref(format(subDays(new Date(), 1), 'yyyy-MM-dd'))
 const endDate = ref(format(new Date(), 'yyyy-MM-dd'))

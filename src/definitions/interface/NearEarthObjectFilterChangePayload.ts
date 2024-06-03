@@ -1,4 +1,4 @@
-export interface FilterChangePayload {
+export interface NearEarthObjectFilterChangePayload {
   minDiameter: number
   maxDiameter: number
   isHazardous: boolean
