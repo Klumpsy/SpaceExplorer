@@ -62,28 +62,28 @@ onMounted(() => {
   <div class="bg-black min-h-screen text-white">
     <div class="container mx-auto p-4">
       <h1 class="text-3xl font-bold mb-4 text-green-500">Near Earth Objects</h1>
-      <div class="flex gap-2 mb-4">
-        <div>
+      <div class="flex flex-col md:flex-row gap-2 mb-4">
+        <div class="w-full md:w-auto">
           <label for="start-date" class="mr-2">Start Date:</label>
           <input
             type="date"
             id="start-date"
             v-model="startDate"
-            class="p-1 border rounded bg-gray-700 text-white"
+            class="p-1 border rounded bg-gray-700 text-white w-full md:w-auto"
           />
         </div>
-        <div>
+        <div class="w-full md:w-auto">
           <label for="end-date" class="mr-2">End Date:</label>
           <input
             type="date"
             id="end-date"
             v-model="endDate"
-            class="p-1 border rounded bg-gray-700 text-white"
+            class="p-1 border rounded bg-gray-700 text-white w-full md:w-auto"
           />
         </div>
         <button
           @click="fetchData"
-          class="px-4 py-2 bg-green-500 rounded hover:bg-blue-700 transition-colors"
+          class="px-4 py-2 bg-green-500 rounded hover:bg-blue-700 transition-colors w-full md:w-auto"
         >
           Search
         </button>

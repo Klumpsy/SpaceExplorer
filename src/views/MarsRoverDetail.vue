@@ -1,14 +1,14 @@
 <template>
   <div class="bg-mars-detail min-h-screen flex flex-col items-center p-4 relative">
     <div class="container mx-auto p-4 relative">
-      <router-link to="/mars-rovers" class="absolute top-4 left-4">
+      <router-link to="/mars-rovers" class="mb-3">
         <button
           class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-400 transition-colors"
         >
           Back
         </button>
       </router-link>
-      <div class="flex flex-col md:flex-row items-center gap-4 justify-around">
+      <div class="flex flex-col md:flex-row items-center gap-4 justify-around pt-4">
         <div class="flex flex-col items-center md:order-1">
           <div class="rounded-full overflow-hidden w-48 h-48 relative">
             <img :src="roverImage" alt="Rover badge" class="w-full h-full object-cover" />

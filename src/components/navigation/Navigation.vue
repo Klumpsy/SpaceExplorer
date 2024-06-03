@@ -61,7 +61,7 @@ watch(router, () => {
           'justify-end',
           'w-full',
           'md:w-auto',
-          'md:order-1',
+          'md:order-2',
           isMenuOpen ? 'block' : 'hidden',
           'md:block'
         ]"

@@ -7,6 +7,7 @@ import { PictureOfTheDay } from '../interface/PictureOfTheDay'
 
 const pictureOfTheDay = ref<PictureOfTheDay | null>(null)
 const showRocket = ref(false)
+const showHdPictureOfTheDay = ref(false)
 const loading = ref(true)
 
 onMounted(async () => {
@@ -16,22 +17,35 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div
-    v-if="showRocket"
-    class="h-10 absolute top-20 left-5 p-5 z-10 bg-black bg-opacity-50 rounded-full flex items-center justify-center hover:bg-opacity-60 transition duration-300 ease-in-out cursor-pointer"
-  >
-    <img
-      src="../assets/images/rocket.png"
-      class="h-7 transition duration-300 ease-in-out transform hover:scale-110"
-      alt="Space explorer logo"
-      @click="showRocket = false"
-    />
+  <div>
+    <div
+      v-if="showRocket"
+      class="h-10 absolute top-20 left-5 p-5 z-10 bg-black bg-opacity-50 rounded-full flex items-center justify-center hover:bg-opacity-60 transition duration-300 ease-in-out cursor-pointer"
+    >
+      <img
+        src="../assets/images/rocket.png"
+        class="h-7 transition duration-300 ease-in-out transform hover:scale-110"
+        alt="Space explorer logo"
+        @click="showRocket = false"
+      />
+    </div>
+
+    <button
+      @click="showHdPictureOfTheDay = !showHdPictureOfTheDay"
+      :class="[
+        'p-3 text-white z-10 bg-black bg-opacity-50 rounded-full flex items-center justify-center hover:bg-opacity-60 transition duration-300 ease-in-out cursor-pointer',
+        showRocket ? 'absolute top-40 h10 left-5' : 'absolute top-20 left-5',
+        showHdPictureOfTheDay ? 'bg-green-500' : 'bg-black'
+      ]"
+    >
+      HD
+    </button>
   </div>
 
   <header class="relative w-screen h-screen">
     <img
       v-if="pictureOfTheDay"
-      :src="pictureOfTheDay.hdurl"
+      :src="showHdPictureOfTheDay ? pictureOfTheDay.hdurl : pictureOfTheDay.url"
       alt="NASA picture of the day"
       class="absolute inset-0 w-full h-full object-cover"
       :class="{ 'blur-sm': loading }"
@@ -70,4 +84,5 @@ onMounted(async () => {
     </div>
   </header>
 </template>
+
 <style scoped></style>
