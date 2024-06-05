@@ -7,7 +7,7 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 
 export default defineConfig({
   plugins: [vue(), vueJsx(), VueDevTools()],
-  base: '/spaceExplorer/',
+  base: '/SpaceExplorer/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
